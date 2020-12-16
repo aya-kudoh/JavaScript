@@ -6,11 +6,21 @@
   </head>
   <body>
     <script>
-      const myFunc = (keyword) => {
-        console.log('指定した文字は、「' + keyword + '」ですね？');
+      const products = ['テレビ', '冷蔵庫', '机', 'スマホ', '本棚', '椅子', 'テーブル'];
+      
+      const search = (item, target) => {
+        
+        const result = item.filter(item => item === target);
+        
+        if(result.length) {
+          return('商品が見つかりました！');
+        }else{
+          return('お探しの商品は見つかりませんでした');
+        }
       }
       
-      myFunc('プログラミング'); 
+      console.log(search(products, 'スマホ'));
+     
 　  </script>
   </body>
 </html>
