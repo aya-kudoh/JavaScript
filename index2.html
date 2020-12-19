@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>サンプルデモ</title>
+</head>
+<body>
+    
+　　<form name = "myForm">
+　　    
+　　    <input type="text" name="myText"/>
+　　    
+　　</form>
+　　
+　　<button id = "btn">カウント</button>
+    
+    <script>
+    　const btn = document.getElementById('btn');
+    　
+    　btn.addEventListener("click", () => {
+    　    const value = document.forms.myForm.myText.value;
+    　    
+    　    console.log(value.length + "文字");
+    　});
+    </script>
+    
+</body>
+</html>
