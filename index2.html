@@ -7,21 +7,27 @@
 <body>
     
 　　<form name = "myForm">
-　　    
-　　    <input type="text" name="myText"/>
-　　    
+　　    <label>利用したことのあるOSを選択してください</label><br/>
+　　   <input type="checkbox" name="os" value="windows"/>Windows
+　　   <input type="checkbox" name="os" value="macos"/>Mac OS
+　　   <input type="checkbox" name="os" value="linux"/>Linux
+　　   <input type="checkbox" name="os" value="ios"/>ios
+　　   <input type="checkbox" name="os" value="android"/>Android
 　　</form>
 　　
-　　<button id = "btn">カウント</button>
+　　<button id="btn">実行</button>
     
     <script>
-    　const btn = document.getElementById('btn');
+      const btn = document.getElementById('btn');
+      
+      btn.addEventListener('click', () => {
+          const form = document.forms.myForm;
+          
+          form.os.forEach(item => {
+              if(item.checked) console.log(item.value);
+          })
+      })
     　
-    　btn.addEventListener("click", () => {
-    　    const value = document.forms.myForm.myText.value;
-    　    
-    　    console.log(value.length + "文字");
-    　});
     </script>
     
 </body>
